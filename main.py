@@ -11,11 +11,14 @@ config = dotenv_values(".env")
 with seleniumbase.SB() as driver:
     driver.get("https://pearsonactivelearn.com/app/login?redirect=/app/library")
     WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.ID, "username")))
-    driver.find_element(By.ID, "username").send_keys(config['USERNAME'])
-    driver.find_element(By.ID, 'password').send_keys(config['PASSWORD'])
-    WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.ID, 'submitBttn'))).click()
-
-    input("Load a book, then press Enter")
+    
+    if "USERNAME" in config:
+        driver.find_element(By.ID, "username").send_keys(config['USERNAME'])
+        driver.find_element(By.ID, 'password').send_keys(config['PASSWORD'])
+        WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.ID, 'submitBttn'))).click()
+        input("Load a book, then press Enter")
+    else:
+        input("- Login with your credentials\n- Load the ebook, then press Enter")
 
     driver.switch_to_newest_tab()
     driver.switch_to_frame("#ebookPlayer")
