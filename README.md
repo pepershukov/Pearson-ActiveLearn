@@ -11,6 +11,7 @@ Code is provided under the [**MIT License**](https://github.com/pepershukov/Pear
 ## Requirements
 - Active license to the ebook
 - Chrome browser
+- Non-headless browser instance
 
 ## Usage
 ### Config file
@@ -29,3 +30,12 @@ PASSWORD=pass
 ### Running
 - After logging in, you choose and load the ebook you want to download.
 - When you load the book, wait for it to load fully the first page, and then press Enter in the console.
+
+#### From source
+- Requires Python 3.8+
+- Dependencies in [`requirements.txt`](https://github.com/pepershukov/Pearson-ActiveLearn/blob/main/requirements.txt)
+- Run `main.py`
+
+#### From executable
+- Download the [latest release](https://github.com/pepershukov/Pearson-ActiveLearn/releases/latest)
+- Run the executable
